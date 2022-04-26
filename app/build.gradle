@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.serialization'
 }
 
 android {
@@ -50,4 +51,6 @@ dependencies {
     implementation "ch.qos.logback:logback-classic:1.2.3"
 
     implementation("io.ktor:ktor-client-serialization:$ktor_version")
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-alpha02"
+
 }
