@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import elektroGo.adminapp.R
 
-class ViewReportList : Fragment() {
+class ViewReportListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ViewReportList()
+        fun newInstance() = ViewReportListFragment()
     }
 
     private lateinit var viewModel: ViewReportListViewModel
@@ -23,10 +23,9 @@ class ViewReportList : Fragment() {
         return inflater.inflate(R.layout.view_report_list_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ViewReportListViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[ViewReportListViewModel::class.java]
     }
 
 }
