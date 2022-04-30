@@ -6,12 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import elektroGo.adminapp.R
-import elektroGo.adminapp.databinding.ActivityReportListBinding
 import elektroGo.adminapp.ui.MainActivity
 
 class ReportListActivity : AppCompatActivity() {
@@ -29,14 +24,14 @@ class ReportListActivity : AppCompatActivity() {
             super.onBackPressed()
         } else {
             var intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("origin", "vehicleList")
+            intent.putExtra("origin", "reportList")
             startActivity(intent)
         }
     }
 
     private fun loadFragment(fragment: Fragment) {
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.show(fragment)
+        transaction.replace(R.id.frame_container, fragment)
         transaction.commit()
     }
 }

@@ -16,4 +16,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="GetReportsError">Hi ha hagut un error intentant obtenir la llista de reports</string>
+    <string name="GetReportsGood">El llistat de reports ha estat obtingut</string>
+    <string name="emptyReportList">No hi ha cap report.</string>
 </resources>

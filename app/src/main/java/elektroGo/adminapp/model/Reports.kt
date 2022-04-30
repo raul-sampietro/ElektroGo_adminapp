@@ -1,6 +1,9 @@
 package elektroGo.adminapp.model
 
-data class Report(
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Reports(
     val userWhoReports: String,
     val reportedUser: String,
     val reason: String
