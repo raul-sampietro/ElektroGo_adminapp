@@ -1,4 +1,4 @@
-package elektroGo.adminapp.ui.reports
+package elektroGo.adminapp.ui.reportList
 
 import androidx.lifecycle.ViewModel
 import elektroGo.adminapp.controller.AdminAppController

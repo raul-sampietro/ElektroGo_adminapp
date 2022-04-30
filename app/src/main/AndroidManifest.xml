@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ElektroGo_adminapp">
         <activity
-            android:name=".ui.reports.ReportListActivity"
+            android:name=".ui.reportList.ReportListActivity"
             android:exported="false"
             android:label="@string/title_activity_report_list"
             android:theme="@style/Theme.ElektroGo_adminapp.NoActionBar" />

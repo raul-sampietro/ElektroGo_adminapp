@@ -1,4 +1,4 @@
-package elektroGo.adminapp.ui.reports
+package elektroGo.adminapp.ui.reportList
 
 import android.content.Intent
 import android.os.Bundle

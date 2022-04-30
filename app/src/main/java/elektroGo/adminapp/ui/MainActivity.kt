@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import elektroGo.adminapp.R
-import elektroGo.adminapp.ui.reports.ReportListActivity
+import elektroGo.adminapp.ui.reportList.ReportListActivity
 
 
 class MainActivity : AppCompatActivity() {

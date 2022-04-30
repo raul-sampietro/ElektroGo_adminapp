@@ -1,4 +1,4 @@
-package elektroGo.adminapp.ui.reports
+package elektroGo.adminapp.ui.reportList
 
 import android.app.Activity
 import android.view.LayoutInflater
