@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">ElektroGo_adminapp</string>
+    <string name="usernameReporter">Username del acusador:</string>
+    <string name="usernameExample">Daniel</string>
+    <string name="reportedUsernameLabel">Username del denunciat:</string>
+    <string name="usernameExample2">Simon</string>
+    <string name="reasonLabel">Motiu:</string>
+    <string name="reasonExample">He denunciat a en Simon ja què es dedica a fer-me spam per el xat privat i molesta. Espero que es castigui a aquest usuari ja que consider-ho que aquest tipus de usuari són prejudicials per la vostra comunitat.</string>
+    <string name="showMoreButton">+ veure més</string>
+    <string name="title_activity_report_list">ReportListActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="GetReportsError">Hi ha hagut un error intentant obtenir la llista de reports</string>
+    <string name="GetReportsGood">El llistat de reports ha estat obtingut</string>
+    <string name="emptyReportList">No hi ha cap report.</string>
+    <string name="title_activity_show_more_report">ShowMoreReportActivity</string>
+    <string name="solveReport">Resoldre denuncia</string>
+    <string name="deleteUser">Eliminar usuari</string>
 </resources>
