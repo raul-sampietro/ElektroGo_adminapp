@@ -11,6 +11,7 @@ import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
+import io.ktor.http.*
 
 object AdminAppController {
     private const val URL_BASE = "http://10.4.41.58:8080/"
@@ -43,4 +44,23 @@ object AdminAppController {
 
     }
     //TODO add methods here
+
+
+    suspend fun deleteUser(userToDelete: String): Int {
+
+        val httpResponse: HttpResponse = client.post("${URL_BASE}users/delete") {
+            parameter("userName", userToDelete)
+        }
+        return httpResponse.status.value
+    }
+
+    suspend fun deleteReport(uWhoReports: String, uReported: String): Int {
+
+        val httpResponse: HttpResponse = client.post("${URL_BASE}reports/delete????????") {
+            parameter("userName", userToDelete)
+            parameter("userName", userToDelete)
+        }
+        return httpResponse.status.value
+    }
+
 }
