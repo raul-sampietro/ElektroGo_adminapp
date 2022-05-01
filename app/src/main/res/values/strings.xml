@@ -21,5 +21,6 @@
     <string name="GetReportsGood">El llistat de reports ha estat obtingut</string>
     <string name="emptyReportList">No hi ha cap report.</string>
     <string name="title_activity_show_more_report">ShowMoreReportActivity</string>
-    <string name=""
+    <string name="solveReport">Resoldre denuncia</string>
+    <string name="deleteUser">Eliminar usuari</string>
 </resources>
