@@ -1,11 +1,14 @@
 package elektroGo.adminapp.ui.reportList
 
 import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import elektroGo.adminapp.R
 import elektroGo.adminapp.model.Reports
 
@@ -20,6 +23,7 @@ class ReportAdapter (private val context: Activity, private val reportList: Arra
         val userWhoReports : TextView = view.findViewById(R.id.Username)
         val userReported : TextView = view.findViewById(R.id.reportedUsername)
         val briefReason : TextView = view.findViewById(R.id.brieflyReason)
+        val showMore: Button = view.findViewById(R.id.viewMoreButton)
         val report  = reportList[position]
 
         userWhoReports.text = report.userWhoReports
@@ -33,6 +37,14 @@ class ReportAdapter (private val context: Activity, private val reportList: Arra
 
         briefReason.text = reasonBrief
 
+        showMore.setOnClickListener {
+            //Quan es clica sobre un view more s'obra l'activity amb més info
+            val i = Intent(context, DetailsReportActivity::class.java)
+            i.putExtra("userWhoReports", report.userWhoReports)
+            i.putExtra("userReported", report.reportedUser)
+            i.putExtra("reason", report.reason)
+            view.context.startActivity(i)
+        }
         return view
     }
 }

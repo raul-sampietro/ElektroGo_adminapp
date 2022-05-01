@@ -20,4 +20,6 @@
     <string name="GetReportsError">Hi ha hagut un error intentant obtenir la llista de reports</string>
     <string name="GetReportsGood">El llistat de reports ha estat obtingut</string>
     <string name="emptyReportList">No hi ha cap report.</string>
+    <string name="title_activity_show_more_report">ShowMoreReportActivity</string>
+    <string name=""
 </resources>

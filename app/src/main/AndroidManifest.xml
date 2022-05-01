@@ -13,12 +13,20 @@
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ElektroGo_adminapp">
+        android:theme="@style/Theme.ElektroGo_adminapp"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.reportList.DetailsReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.reportList.ShowMoreReportActivity"
+            android:exported="false"
+            android:label="@string/title_activity_show_more_report"
+            android:theme="@style/Theme.ElektroGo_adminapp.NoActionBar" />
         <activity
             android:name=".ui.reportList.ReportListActivity"
             android:exported="false"
