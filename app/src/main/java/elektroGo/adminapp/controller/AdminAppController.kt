@@ -49,7 +49,7 @@ object AdminAppController {
     suspend fun deleteUser(userToDelete: String): Int {
 
         val httpResponse: HttpResponse = client.post("${URL_BASE}users/delete") {
-            parameter("userName", userToDelete)
+            parameter("username", userToDelete)
         }
         return httpResponse.status.value
     }
