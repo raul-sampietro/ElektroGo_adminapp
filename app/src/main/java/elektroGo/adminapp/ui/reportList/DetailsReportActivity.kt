@@ -1,5 +1,6 @@
 package elektroGo.adminapp.ui.reportList
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -7,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import elektroGo.adminapp.R
 import elektroGo.adminapp.controller.AdminAppController
+import elektroGo.adminapp.ui.MainActivity
 import kotlinx.coroutines.runBlocking
 
 class DetailsReportActivity : AppCompatActivity() {
@@ -53,7 +55,7 @@ class DetailsReportActivity : AppCompatActivity() {
             else if (status == 200) Toast.makeText(this, "La denúncia s'ha eliminat.", Toast.LENGTH_LONG).show()
             else if (status != -2) Toast.makeText(this, "Hi ha hagut un error. ERROR: $status", Toast.LENGTH_LONG).show()
 
-            finish()
+            onBackPressed()
         }
 
         deleteUser.setOnClickListener{
@@ -73,8 +75,16 @@ class DetailsReportActivity : AppCompatActivity() {
             else if (status == 200) Toast.makeText(this, "L'usuari $userToDelete ha estat eliminat.", Toast.LENGTH_LONG).show()
             else if (status != -2) Toast.makeText(this, "Hi ha hagut un error. ERROR: $status", Toast.LENGTH_LONG).show()
 
-            finish()
+            onBackPressed()
         }
-
+    }
+    override fun onBackPressed() {
+        if (onBackPressedDispatcher.hasEnabledCallbacks()) {
+            super.onBackPressed()
+        } else {
+            var intent = Intent(this, ReportListActivity::class.java)
+            intent.putExtra("origin", "reportList")
+            startActivity(intent)
+        }
     }
 }
