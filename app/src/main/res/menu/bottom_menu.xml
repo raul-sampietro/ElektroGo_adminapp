@@ -3,16 +3,16 @@
 
     <item
         android:id="@+id/vehicleListFragment"
-        android:title="VehicleList"
+        android:title="Llistat vehícles"
         android:icon="@drawable/vehicle_selected"
         />
     <item
         android:id="@+id/viewReportListFragment"
-        android:title="ReportList"
+        android:title="Llistat de denuncies"
         android:icon="@drawable/report_selector" />
 
     <item
         android:id="@+id/driversList"
-        android:title="DriverList"
+        android:title="Llistat de conductors"
         android:icon="@drawable/driver_selector" />
 </menu>
