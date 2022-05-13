@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/viewReportListFragment">
+
+    <fragment
+        android:id="@+id/driversList"
+        android:name="elektroGo.adminapp.ui.driversConfirmation.DriversList"
+        android:label="Llistat de conductors a verificar"
+        tools:layout="@layout/drivers_list_fragment" />
+    <fragment
+        android:id="@+id/vehicleListFragment"
+        android:name="elektroGo.adminapp.ui.vehicleConfirmation.VehicleListFragment"
+        android:label="Llistat de vehícles a verficiar"
+        tools:layout="@layout/vehicle_list_fragment" />
+    <fragment
+        android:id="@+id/viewReportListFragment"
+        android:name="elektroGo.adminapp.ui.reportList.ViewReportListFragment"
+        android:label="Llistat de denuncies" />
+</navigation>

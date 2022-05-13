@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/vehicleListFragment"
+        android:title="VehicleList"
+        android:icon="@drawable/vehicle_selected"
+        />
+    <item
+        android:id="@+id/viewReportListFragment"
+        android:title="ReportList"
+        android:icon="@drawable/report_selector" />
+
+    <item
+        android:id="@+id/driversList"
+        android:title="DriverList"
+        android:icon="@drawable/driver_selector" />
+</menu>
