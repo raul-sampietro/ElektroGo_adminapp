@@ -23,4 +23,5 @@
     <string name="title_activity_show_more_report">ShowMoreReportActivity</string>
     <string name="solveReport">Resoldre denuncia</string>
     <string name="deleteUser">Eliminar usuari</string>
+    <string name="VehicleSeats">Seients del vehicle</string>
 </resources>
