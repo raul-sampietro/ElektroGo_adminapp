@@ -31,7 +31,7 @@
             android:id="@+id/emptyList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/emptyReportList"
+            android:text="No hi ha cap vehícle a verificar."
             android:textColor="#000000"
             android:textSize="34sp"
             android:gravity="center"
