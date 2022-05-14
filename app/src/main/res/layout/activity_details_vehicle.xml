@@ -193,14 +193,14 @@
             android:gravity="bottom|center"
             android:layout_marginBottom="10dp">
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/acceptButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Acceptar"
                 android:backgroundTint="@color/green" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/declineButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rebutjar"
