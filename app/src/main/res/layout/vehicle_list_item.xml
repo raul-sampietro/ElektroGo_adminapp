@@ -31,7 +31,7 @@
                     android:layout_height="80dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/outline_image_not_supported_24"
+                    android:background="@drawable/ic_baseline_image_24"
                     android:scaleType="centerCrop" />
 
                 <LinearLayout
