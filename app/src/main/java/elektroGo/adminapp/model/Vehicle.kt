@@ -1,4 +1,4 @@
-package elektrogo.front.model
+package elektroGo.adminapp.model
 
 import kotlinx.serialization.Serializable
 

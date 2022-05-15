@@ -13,8 +13,8 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.squareup.picasso.Picasso
 import elektroGo.adminapp.R
+import elektroGo.adminapp.model.Vehicle
 import elektroGo.adminapp.ui.reportList.DetailsReportActivity
-import elektrogo.front.model.Vehicle
 import kotlinx.coroutines.runBlocking
 
 class VehicleAdapter(private val context : Activity, private val vehicleList : ArrayList<Vehicle>)
@@ -35,6 +35,7 @@ class VehicleAdapter(private val context : Activity, private val vehicleList : A
         val v = vehicleList[position]
         val imageViewPhoto : ImageView =view.findViewById(R.id.vehicleImage)
         val nPlate = v.numberPlate
+        //TODO: Carregar les imatges de cada vehicle
         Picasso.get().load("http://10.4.41.58:8080/vehicle/getImage?numberPlate=$nPlate").into(imageViewPhoto)
         numberPlate.text = nPlate
         brand.text = v.brand

@@ -1,7 +1,7 @@
 package elektroGo.adminapp.controller
 
 import elektroGo.adminapp.model.Reports
-import elektrogo.front.model.Vehicle
+import elektroGo.adminapp.model.Vehicle
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.engine.android.*

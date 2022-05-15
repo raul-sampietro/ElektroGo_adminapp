@@ -11,8 +11,7 @@ import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
 import elektroGo.adminapp.R
-import elektroGo.adminapp.ui.reportList.ReportAdapter
-import elektrogo.front.model.Vehicle
+import elektroGo.adminapp.model.Vehicle
 
 class VehicleListFragment : Fragment() {
 
@@ -35,9 +34,11 @@ class VehicleListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val listView: ListView = view.findViewById(R.id.vehicleListFragment)
+        viewModel = VehicleListViewModel()
         emptyList = requireActivity().findViewById(R.id.emptyList)
         vehicleList = ArrayList<Vehicle>()
 
+        //TODO: Implementar la crida
         val httpResponse = viewModel.getVehicleList()
         if (httpResponse.first != 200){
             Toast.makeText(context, getString(R.string.GetReportsError), Toast.LENGTH_SHORT).show()
