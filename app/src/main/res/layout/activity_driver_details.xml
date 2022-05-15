@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#18E320"
                 android:orientation="vertical"
-                android:text="@string/solveReport" />
+                android:text="Acceptar" />
 
             <Button
                 android:id="@+id/deleteUserButton"
@@ -135,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:backgroundTint="#EC0909"
-                android:text="@string/deleteUser" />
+                android:text="Rebutjar" />
         </LinearLayout>
 
 
