@@ -5,9 +5,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.vehicleConfirmation.VehicleListFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+
+        <ListView
+            android:id="@+id/vehicleListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/vehicle_list_item">
+
+        </ListView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/emptyList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No hi ha cap vehícle a verificar."
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

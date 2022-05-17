@@ -20,6 +20,9 @@
         android:theme="@style/Theme.ElektroGo_adminapp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.vehicleConfirmation.DetailsVehicleActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.reportList.DetailsReportActivity"
             android:exported="false" />
         <activity
