@@ -9,4 +9,12 @@ class VehicleListViewModel : ViewModel() {
     fun getVehicleList() : Pair<Int, ArrayList<Vehicle>> = runBlocking {
         AdminAppController.getVehicleList()
     }
+
+    fun acceptVehicle(numberPlate: String): Int = runBlocking {
+        AdminAppController.acceptVehicle(numberPlate)
+    }
+
+    fun rejectVehicle(numberPlate: String): Int = runBlocking {
+        AdminAppController.rejectVehicle(numberPlate)
+    }
 }

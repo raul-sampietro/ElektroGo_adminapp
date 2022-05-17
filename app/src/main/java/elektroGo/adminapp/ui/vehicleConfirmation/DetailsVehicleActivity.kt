@@ -5,9 +5,13 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import com.squareup.picasso.Picasso
 import elektroGo.adminapp.R
 
 class DetailsVehicleActivity : AppCompatActivity() {
+    private lateinit var viewModel: VehicleListViewModel
+
     private lateinit var licensePlateValue: TextView
 
     private lateinit var branchValue: TextView
@@ -30,6 +34,7 @@ class DetailsVehicleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_vehicle)
 
+        viewModel = VehicleListViewModel()
         licensePlateValue = findViewById(R.id.licensePlateValue)
         branchValue = findViewById(R.id.branchValue)
         modelValue = findViewById(R.id.modelValue)
@@ -47,6 +52,24 @@ class DetailsVehicleActivity : AppCompatActivity() {
         fabricationYear.text = intent.getStringExtra("fabricationYear")
         drivingRangeValue.text = intent.getStringExtra("drivingRange")
 
+        Picasso.get().load("http://10.4.41.58:8080/vehicles/${licensePlateValue.text}/image").into(imageView)
 
+        acceptButton.setOnClickListener {
+            var status = viewModel.acceptVehicle(intent.getStringExtra("licensePlate")!!)
+            if (status != 200) Toast.makeText(this, "No s'ha trobat el vehicle.", Toast.LENGTH_LONG).show()
+            else {
+                Toast.makeText(this, "El vehícle ha estat acceptat.", Toast.LENGTH_LONG).show()
+                finish()
+            }
+        }
+
+        rejectButton.setOnClickListener {
+            var status = viewModel.rejectVehicle(intent.getStringExtra("licensePlate")!!)
+            if (status != 200) Toast.makeText(this, "No s'ha trobat el vehicle.", Toast.LENGTH_LONG).show()
+            else {
+                Toast.makeText(this, "El vehícle ha estat eliminat.", Toast.LENGTH_LONG).show()
+                finish()
+            }
+        }
     }
 }
