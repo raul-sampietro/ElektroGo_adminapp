@@ -56,8 +56,7 @@ object AdminAppController {
 
     suspend fun deleteReport(uWhoReports: String, uReported: String): Int {
 
-        val httpResponse: HttpResponse = client.post("${URL_BASE}user/unreport") {
-            parameter("userWhoReports", uWhoReports)
+        val httpResponse: HttpResponse = client.post("${URL_BASE}user/unreport") {            parameter("userWhoReports", uWhoReports)
             parameter("reportedUser", uReported)
         }
         return httpResponse.status.value
