@@ -3,11 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.driversConfirmation.DriversList">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.reportList.ViewReportListViewModel">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+
+        <ListView
+            android:id="@+id/reportListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/driver_list_item">
+
+        </ListView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/emptyList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No hi ha cap conductor a verificar."
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
