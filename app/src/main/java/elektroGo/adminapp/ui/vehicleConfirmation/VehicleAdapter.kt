@@ -36,7 +36,7 @@ class VehicleAdapter(private val context : Activity, private val vehicleList : A
         val imageViewPhoto : ImageView =view.findViewById(R.id.vehicleImage)
         val nPlate = v.numberPlate
         //TODO: Carregar les imatges de cada vehicle
-        Picasso.get().load("http://10.4.41.58:8080/vehicle/getImage?numberPlate=$nPlate").into(imageViewPhoto)
+        Picasso.get().load("http://10.4.41.58:8080/vehicles/$nPlate/image").into(imageViewPhoto)
         numberPlate.text = nPlate
         brand.text = v.brand
         model.text = v.model
@@ -45,13 +45,13 @@ class VehicleAdapter(private val context : Activity, private val vehicleList : A
 
         showMore.setOnClickListener {
             //Quan es clica sobre un view more s'obra l'activity amb més info
-            val i = Intent(context, DetailsReportActivity::class.java)
+            val i = Intent(context, DetailsVehicleActivity::class.java)
             i.putExtra("licensePlate", v.numberPlate)
             i.putExtra("brand", v.brand)
             i.putExtra("model", v.model)
-            i.putExtra("fabricationYear", v.fabricationYear)
-            i.putExtra("seats", v.seats)
-            i.putExtra("drivingRange", v.drivingRange)
+            i.putExtra("fabricationYear", v.fabricationYear.toString())
+            i.putExtra("seats", v.seats.toString())
+            i.putExtra("drivingRange", v.drivingRange.toString())
             view.context.startActivity(i)
         }
         return view
