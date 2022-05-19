@@ -12,8 +12,6 @@
         android:orientation="vertical"
         android:gravity="center">
 
-
-
         <ListView
             android:id="@+id/reportListView"
             android:layout_width="match_parent"

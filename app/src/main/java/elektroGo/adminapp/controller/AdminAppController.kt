@@ -1,6 +1,7 @@
 package elektroGo.adminapp.controller
 
 import elektroGo.adminapp.model.Reports
+import elektroGo.adminapp.model.Vehicle
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.engine.android.*
@@ -43,6 +44,7 @@ object AdminAppController {
         return Pair(status, reportList)
 
     }
+
     //TODO add methods here
 
 
@@ -62,5 +64,28 @@ object AdminAppController {
         }
         return httpResponse.status.value
     }
+
+    suspend fun getVehicleList(): Pair<Int, ArrayList<Vehicle>>{
+        val vehicles: HttpResponse = client.get("${URL_BASE}vehicles/notVerified")
+        val status: Int = vehicles.status.value
+
+        val vehicleList: ArrayList<Vehicle>
+        if (status != 200) vehicleList = ArrayList<Vehicle>()
+        else vehicleList = vehicles.receive()
+        return Pair(status, vehicleList)
+    }
+
+    suspend fun acceptVehicle(numberPlate: String): Int {
+
+        val httpResponse: HttpResponse = client.put("${URL_BASE}vehicles/verify/${numberPlate}")
+        return httpResponse.status.value
+    }
+
+    suspend fun rejectVehicle(numberPlate: String): Int {
+
+        val httpResponse: HttpResponse = client.delete("${URL_BASE}vehicles/${numberPlate}")
+        return httpResponse.status.value
+    }
+
 
 }
