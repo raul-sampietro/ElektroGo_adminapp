@@ -13,13 +13,13 @@ import android.widget.Toast
 import elektroGo.adminapp.R
 import elektroGo.adminapp.model.Reports
 
-class ViewReportListFragment : Fragment() {
+class ReportListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ViewReportListFragment()
+        fun newInstance() = ReportListFragment()
     }
 
-    private lateinit var viewModel: ViewReportListViewModel
+    private lateinit var viewModel: ReportListViewModel
 
     private lateinit var reportList: ArrayList<Reports>
 
@@ -28,7 +28,7 @@ class ViewReportListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.view_report_list_fragment, container, false)
+        return inflater.inflate(R.layout.report_list_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,7 +50,7 @@ class ViewReportListFragment : Fragment() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[ViewReportListViewModel::class.java]
+        viewModel = ViewModelProvider(this)[ReportListViewModel::class.java]
     }
 
 }

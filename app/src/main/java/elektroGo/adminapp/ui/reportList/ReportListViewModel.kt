@@ -5,7 +5,7 @@ import elektroGo.adminapp.controller.AdminAppController
 import elektroGo.adminapp.model.Reports
 import kotlinx.coroutines.runBlocking
 
-class ViewReportListViewModel : ViewModel() {
+class ReportListViewModel : ViewModel() {
     fun getReports() : Pair <Int, ArrayList<Reports> > = runBlocking {
         AdminAppController.getReportsList()
     }

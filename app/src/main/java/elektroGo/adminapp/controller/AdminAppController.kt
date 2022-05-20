@@ -1,5 +1,6 @@
 package elektroGo.adminapp.controller
 
+import android.app.ActionBar
 import elektroGo.adminapp.model.Reports
 import elektroGo.adminapp.model.Vehicle
 import io.ktor.client.*
@@ -46,8 +47,6 @@ object AdminAppController {
     }
 
     //TODO add methods here
-
-
     suspend fun deleteUser(userToDelete: String): Int {
 
         val httpResponse: HttpResponse = client.post("${URL_BASE}users/delete") {
