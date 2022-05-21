@@ -17,6 +17,6 @@
         tools:layout="@layout/vehicle_list_fragment" />
     <fragment
         android:id="@+id/viewReportListFragment"
-        android:name="elektroGo.adminapp.ui.reportList.ViewReportListFragment"
+        android:name="elektroGo.adminapp.ui.reportList.ReportListFragment"
         android:label="Llistat de denuncies" />
 </navigation>
