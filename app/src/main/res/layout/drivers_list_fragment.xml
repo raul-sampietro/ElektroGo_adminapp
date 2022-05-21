@@ -28,16 +28,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
+
         <TextView
             android:id="@+id/emptyList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No hi ha cap conductor a verificar."
-            android:textColor="#000000"
-            android:textSize="34sp"
             android:gravity="center"
             android:includeFontPadding="false"
-            />
+            android:text="No hi ha cap conductor a verificar."
+            android:textColor="#000000"
+            android:textSize="34sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
