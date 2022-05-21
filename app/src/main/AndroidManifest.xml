@@ -21,16 +21,12 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.vehicleConfirmation.DetailsVehicleActivity"
-            android:name=".ui.driversConfirmation.DriverDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.reportList.DetailsReportActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.reportList.ShowMoreReportActivity"
             android:exported="false"
             android:label="@string/title_activity_show_more_report"
-            android:theme="@style/Theme.ElektroGo_adminapp.NoActionBar" />
+            android:theme="@style/Theme.ElektroGo_adminapp.NoActionBar"/>
         <activity
             android:name=".ui.reportList.ReportListActivity"
             android:exported="false"

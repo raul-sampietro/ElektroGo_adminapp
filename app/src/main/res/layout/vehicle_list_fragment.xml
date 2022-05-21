@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.vehicleConfirmation.VehicleListFragment">
 
     <LinearLayout
@@ -10,8 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
-
-
 
         <ListView
             android:id="@+id/vehicleListFragment"
@@ -27,16 +26,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
+
         <TextView
-            android:id="@+id/emptyList"
+            android:id="@+id/emptyListVehicle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No hi ha cap vehícle a verificar."
-            android:textColor="#000000"
-            android:textSize="34sp"
             android:gravity="center"
             android:includeFontPadding="false"
-            />
+            android:textColor="#000000"
+            android:textSize="34sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
