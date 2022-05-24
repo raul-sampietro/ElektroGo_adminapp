@@ -12,10 +12,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
 object AdminAppController {
-    //private const val URL_BASE_WB = "http://10.4.41.58:8080/"
-    //private const val URL_BASE = "http://10.4.41.58:8080";
-    private const val URL_BASE_WB = "http://192.168.1.82:8080/"
-    private const val URL_BASE = "http://192.168.1.82:8080"
+    private const val URL_BASE = "http://10.4.41.58:8080";
 
     private val client = HttpClient(Android) {   //Exemple de com fer una crida amb el nostre servidor!
         expectSuccess = false
