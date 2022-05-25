@@ -21,12 +21,13 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.vehicleConfirmation.DetailsVehicleActivity"
-            android:exported="false"
-            android:label="Detalls del vehicle"/>
+            android:exported="true"
+            android:label="Detalls del vehicle"
+            android:theme="@style/Theme.ElektroGo_adminapp.NoActionBar"/>
         <activity
             android:name=".ui.reportList.DetailsReportActivity"
-            android:exported="false"
-            android:label="@string/title_activity_show_more_report"
+            android:exported="true"
+            android:label="Pavlo"
             android:theme="@style/Theme.ElektroGo_adminapp.NoActionBar"/>
         <activity
             android:name=".ui.reportList.ReportListActivity"

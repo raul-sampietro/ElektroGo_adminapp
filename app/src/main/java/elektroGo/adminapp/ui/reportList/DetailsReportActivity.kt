@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import elektroGo.adminapp.R
 import elektroGo.adminapp.controller.AdminAppController
 import elektroGo.adminapp.ui.MainActivity
@@ -22,10 +23,15 @@ class DetailsReportActivity : AppCompatActivity() {
 
     private lateinit var deleteUser: Button
 
+    lateinit var toolbar2 : androidx.appcompat.widget.Toolbar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_report)
 
+        toolbar2  = findViewById(R.id.toolbar_main)
+
+        toolbar2.title = "Detalls de la denuncia"
         userWhoReports = findViewById(R.id.Username)
         reportedUser = findViewById(R.id.reportedUsername)
         reason = findViewById(R.id.brieflyReason)
