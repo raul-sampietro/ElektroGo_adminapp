@@ -38,7 +38,6 @@ class DetailsReportActivity : AppCompatActivity() {
         reason.text = intent.getStringExtra("reason")
 
         solveButton.setOnClickListener{
-            //TODO: FER LA CRIDA AMB BACKEND, CONTROL D'ERRORS I FER UN TOAST
 
             var status = -1
             val uWhoReports = intent.getStringExtra("userWhoReports")
@@ -55,7 +54,7 @@ class DetailsReportActivity : AppCompatActivity() {
             else if (status == 200) Toast.makeText(this, "La denúncia s'ha eliminat.", Toast.LENGTH_LONG).show()
             else if (status != -2) Toast.makeText(this, "Hi ha hagut un error. ERROR: $status", Toast.LENGTH_LONG).show()
 
-            onBackPressed()
+            finish()
         }
 
         deleteUser.setOnClickListener{
@@ -75,16 +74,8 @@ class DetailsReportActivity : AppCompatActivity() {
             else if (status == 200) Toast.makeText(this, "L'usuari $userToDelete ha estat eliminat.", Toast.LENGTH_LONG).show()
             else if (status != -2) Toast.makeText(this, "Hi ha hagut un error. ERROR: $status", Toast.LENGTH_LONG).show()
 
-            onBackPressed()
+            finish()
         }
     }
-    override fun onBackPressed() {
-        if (onBackPressedDispatcher.hasEnabledCallbacks()) {
-            super.onBackPressed()
-        } else {
-            var intent = Intent(this, ReportListActivity::class.java)
-            intent.putExtra("origin", "reportList")
-            startActivity(intent)
-        }
-    }
+
 }
