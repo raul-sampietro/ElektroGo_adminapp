@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:includeFontPadding="false"
+            android:text="No hi ha cap vehicle a verificar."
             android:textColor="#000000"
             android:textSize="34sp" />
     </LinearLayout>

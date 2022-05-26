@@ -29,6 +29,7 @@ class VehicleListFragment : Fragment() {
 
     private lateinit var emptyList: TextView
 
+    private lateinit var listView: ListView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +39,7 @@ class VehicleListFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val listView: ListView = view.findViewById(R.id.vehicleListFragment)
+        listView = view.findViewById(R.id.vehicleListFragment)
         viewModel = VehicleListViewModel()
         emptyList = requireActivity().findViewById(R.id.emptyListVehicle)
         vehicleList = ArrayList<Vehicle>()
@@ -61,6 +62,27 @@ class VehicleListFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)[VehicleListViewModel::class.java]
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel = VehicleListViewModel()
+        emptyList = requireActivity().findViewById(R.id.emptyListVehicle)
+        vehicleList = ArrayList<Vehicle>()
+
+        val httpResponse = viewModel.getVehicleList()
+        if (httpResponse.first != 200){
+            Toast.makeText(context, getString(R.string.GetReportsError), Toast.LENGTH_SHORT).show()
+        }
+        else {
+            vehicleList = httpResponse.second
+            if (vehicleList.size == 0){
+                emptyList.text = "No hi ha cap vehicle a verificar."
+            }
+            else emptyList.text = ""
+            listView.adapter = VehicleAdapter(context as Activity, vehicleList)
+            Toast.makeText(context, getString(R.string.GetReportsGood), Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

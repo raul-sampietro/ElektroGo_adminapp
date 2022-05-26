@@ -36,7 +36,7 @@ class VehicleAdapter(private val context : Activity, private val vehicleList : A
         val imageViewPhoto : ImageView =view.findViewById(R.id.vehicleImage)
         val nPlate = v.numberPlate
         //TODO: Carregar les imatges de cada vehicle
-        Picasso.get().load("http://10.4.41.58:8080/vehicles/$nPlate/image").into(imageViewPhoto)
+        Picasso.get().load("http://10.4.41.58:8080/vehicles/${nPlate}/image").into(imageViewPhoto)
         numberPlate.text = nPlate
         brand.text = v.brand
         model.text = v.model
