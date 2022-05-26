@@ -30,10 +30,15 @@ class DetailsVehicleActivity : AppCompatActivity() {
 
     private lateinit var rejectButton : Button
 
+    lateinit var toolbar2 : androidx.appcompat.widget.Toolbar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_vehicle)
 
+        toolbar2  = findViewById(R.id.toolbar_main)
+
+        toolbar2.title = "Detalls del vehicle"
         viewModel = VehicleListViewModel()
         licensePlateValue = findViewById(R.id.licensePlateValue)
         branchValue = findViewById(R.id.branchValue)
