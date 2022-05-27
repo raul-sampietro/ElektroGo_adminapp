@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import com.squareup.picasso.Picasso
 import elektroGo.adminapp.R
 
 class DriverDetailsActivity : AppCompatActivity() {
@@ -18,6 +20,8 @@ class DriverDetailsActivity : AppCompatActivity() {
 
     private lateinit var reverseImage : ImageView
 
+    private val viewModel = DriverViewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_driver_details)
@@ -30,14 +34,35 @@ class DriverDetailsActivity : AppCompatActivity() {
 
         username.text = intent.getStringExtra("username")
 
-        //Carregar les dues imatges
+        Picasso.get().load("http://10.4.41.58:8080/drivers/${username.text}/imageFront").into(frontImage)
+        Picasso.get().load("http://10.4.41.58:8080/drivers/${username.text}/imageBack").into(reverseImage)
 
         acceptButton.setOnClickListener{
-
+            val statusCode = viewModel.verifyUser(username.text.toString())
+            if (statusCode == 200){
+                Toast.makeText(this, "El driver ha estat verificat correctament", Toast.LENGTH_LONG).show()
+                finish()
+            }
+            else if (statusCode == 432){
+                Toast.makeText(this, "No s'ha pogut trobar el driver.", Toast.LENGTH_LONG).show()
+            }
+            else if (statusCode == 500){
+                Toast.makeText(this, "Hi ha hagut un problema amb el servidor. Prova-ho de nou més tard.", Toast.LENGTH_LONG).show()
+            }
         }
 
         denyButton.setOnClickListener{
-
+            val statusCode = viewModel.denyUser(username.text.toString())
+            if (statusCode == 200){
+                Toast.makeText(this, "El driver ha estat rebutjat correctament", Toast.LENGTH_LONG).show()
+                finish()
+            }
+            else if (statusCode == 432){
+                Toast.makeText(this, "No s'ha pogut trobar el driver.", Toast.LENGTH_LONG).show()
+            }
+            else if (statusCode == 500){
+                Toast.makeText(this, "Hi ha hagut un problema amb el servidor. Prova-ho de nou més tard.", Toast.LENGTH_LONG).show()
+            }
         }
     }
 }
