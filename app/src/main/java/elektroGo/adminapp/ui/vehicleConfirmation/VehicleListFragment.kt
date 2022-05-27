@@ -46,16 +46,16 @@ class VehicleListFragment : Fragment() {
 
         val httpResponse = viewModel.getVehicleList()
         if (httpResponse.first != 200){
-            Toast.makeText(context, getString(R.string.GetReportsError), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.GetVehiclesError), Toast.LENGTH_SHORT).show()
         }
         else {
             vehicleList = httpResponse.second
             if (vehicleList.size == 0){
-                emptyList.text = "No hi ha cap vehicle a verificar."
+                emptyList.text = getString(R.string.emptyVehicle)
             }
             else emptyList.text = ""
             listView.adapter = VehicleAdapter(context as Activity, vehicleList)
-            Toast.makeText(context, getString(R.string.GetReportsGood), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.GetVehiclesGood), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -72,16 +72,15 @@ class VehicleListFragment : Fragment() {
 
         val httpResponse = viewModel.getVehicleList()
         if (httpResponse.first != 200){
-            Toast.makeText(context, getString(R.string.GetReportsError), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.GetVehiclesError), Toast.LENGTH_SHORT).show()
         }
         else {
             vehicleList = httpResponse.second
             if (vehicleList.size == 0){
-                emptyList.text = "No hi ha cap vehicle a verificar."
+                emptyList.text = getString(R.string.emptyVehicle)
             }
             else emptyList.text = ""
             listView.adapter = VehicleAdapter(context as Activity, vehicleList)
-            Toast.makeText(context, getString(R.string.GetReportsGood), Toast.LENGTH_SHORT).show()
         }
     }
 

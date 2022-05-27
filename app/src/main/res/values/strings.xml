@@ -27,4 +27,10 @@
 
     <string name="GetDriversError">Hi ha hagut un error intentant obtenir la llista de conductors a verificar</string>
     <string name="GetDriversGood">El llistat de conductors a verificar ha estat obtingut</string>
+    <string name="emptyDrivers">No hi ha cap conductor</string>
+
+
+    <string name="GetVehiclesError">Hi ha hagut un error intentant obtenir la llista de vehicles</string>
+    <string name="GetVehiclesGood">El llistat de vehicles ha estat obtingut</string>
+    <string name="emptyVehicle">No hi ha cap vehicle</string>
 </resources>
