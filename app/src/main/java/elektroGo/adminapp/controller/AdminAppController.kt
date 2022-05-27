@@ -109,4 +109,14 @@ object AdminAppController {
         else driverList = drivers.receive()
         return Pair(status, driverList)
     }
+
+    suspend fun validateDriver(username : String): Int {
+        val httpResponse : HttpResponse = client.put("${URL_DRIVERS}/$username/verify")
+        return httpResponse.status.value
+    }
+
+    suspend fun denyUser(username : String): Int {
+        val httpResponse : HttpResponse = client.delete("${URL_DRIVERS}/$username")
+        return httpResponse.status.value
+    }
 }

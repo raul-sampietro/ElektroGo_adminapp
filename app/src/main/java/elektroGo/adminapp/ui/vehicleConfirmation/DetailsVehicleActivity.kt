@@ -56,6 +56,7 @@ class DetailsVehicleActivity : AppCompatActivity() {
         seatsValue.text = intent.getStringExtra("seats")
         fabricationYear.text = intent.getStringExtra("fabricationYear")
         drivingRangeValue.text = intent.getStringExtra("drivingRange")
+        imageView.setImageResource(R.drawable.ic_baseline_image_24)
 
         Picasso.get().load("http://10.4.41.58:8080/vehicles/${licensePlateValue.text}/image").into(imageView)
 
