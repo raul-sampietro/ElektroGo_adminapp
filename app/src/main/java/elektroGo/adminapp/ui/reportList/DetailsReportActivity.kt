@@ -1,15 +1,12 @@
 package elektroGo.adminapp.ui.reportList
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import elektroGo.adminapp.R
 import elektroGo.adminapp.controller.AdminAppController
-import elektroGo.adminapp.ui.MainActivity
 import kotlinx.coroutines.runBlocking
 
 class DetailsReportActivity : AppCompatActivity() {
@@ -35,8 +32,8 @@ class DetailsReportActivity : AppCompatActivity() {
         userWhoReports = findViewById(R.id.Username)
         reportedUser = findViewById(R.id.reportedUsername)
         reason = findViewById(R.id.brieflyReason)
-        solveButton = findViewById(R.id.solveButton)
-        deleteUser = findViewById(R.id.deleteUserButton)
+        solveButton = findViewById(R.id.acceptButton2)
+        deleteUser = findViewById(R.id.denyButton)
 
         //Assignem els texts corresponents
         userWhoReports.text = intent.getStringExtra("userWhoReports")

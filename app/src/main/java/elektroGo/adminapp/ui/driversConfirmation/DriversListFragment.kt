@@ -12,13 +12,11 @@ import android.widget.TextView
 import android.widget.Toast
 import elektroGo.adminapp.R
 import elektroGo.adminapp.model.Driver
-import elektroGo.adminapp.model.Reports
-import elektroGo.adminapp.ui.reportList.ReportAdapter
 
-class DriversList : Fragment() {
+class DriversListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = DriversList()
+        fun newInstance() = DriversListFragment()
     }
 
     private lateinit var viewModel: DriversListViewModel
@@ -32,7 +30,7 @@ class DriversList : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel = DriversListViewModel()
         listView = view.findViewById(R.id.driverListView)
-        emptyList = requireActivity().findViewById(R.id.emptyList)
+        emptyList = requireActivity().findViewById(R.id.emptyListDrivers)
         driverList = ArrayList<Driver>()
 
         val httpResponse = viewModel.getDrivers()
