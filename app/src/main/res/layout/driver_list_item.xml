@@ -40,15 +40,7 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/expirationDateLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Data d\'expiració:"
-                        android:textColor="#000000"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -66,25 +58,16 @@
                         android:textColor="#000000"
                         android:textSize="20sp" />
 
-                    <TextView
-                        android:id="@+id/expirationDateValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:text="12/09/2032"
-                        android:textColor="#000000"
-                        android:textSize="20sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <Button
-                android:id="@+id/viewMoreButton"
+                android:id="@+id/viewMoreButton2"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
-                android:layout_gravity="right"
+                android:layout_gravity="left"
                 android:text="@string/showMoreButton"
                 android:textAlignment="textEnd"
                 android:textColor="@android:color/holo_blue_dark" />

@@ -134,7 +134,7 @@
 
 
         <Button
-            android:id="@+id/solveButton"
+            android:id="@+id/acceptButton2"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#18E320"
@@ -142,7 +142,7 @@
             android:text="@string/solveReport" />
 
         <Button
-            android:id="@+id/deleteUserButton"
+            android:id="@+id/denyButton"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"

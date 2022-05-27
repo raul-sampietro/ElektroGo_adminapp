@@ -14,9 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -43,11 +41,11 @@
             android:id="@+id/fronatlImage"
             android:layout_width="300dp"
             android:layout_height="150dp"
-            android:scaleType="center"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            tools:srcCompat="@tools:sample/avatars"
-            />
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_image_24" />
 
         <TextView
             android:id="@+id/backImageLabel"
@@ -64,10 +62,11 @@
             android:id="@+id/backImage"
             android:layout_width="300dp"
             android:layout_height="150dp"
-            android:scaleType="center"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_image_24" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -91,15 +90,6 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/expirationDateLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Data d\'expiració:"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -118,14 +108,6 @@
                     android:textColor="#000000"
                     android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/expirationDateValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="12/09/2032"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -140,7 +122,7 @@
 
 
             <Button
-                android:id="@+id/solveButton"
+                android:id="@+id/acceptButton2"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#18E320"
@@ -148,7 +130,7 @@
                 android:text="Acceptar" />
 
             <Button
-                android:id="@+id/deleteUserButton"
+                android:id="@+id/denyButton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"

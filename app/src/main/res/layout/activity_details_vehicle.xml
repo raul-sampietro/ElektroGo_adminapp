@@ -27,8 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_margin="20dp"
-            android:scaleType="center"
-            tools:srcCompat="@drawable/ic_baseline_image_24" />
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_image_24" />
 
         <TextView
             android:id="@+id/infoLabel"
