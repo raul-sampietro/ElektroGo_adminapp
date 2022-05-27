@@ -24,4 +24,7 @@
     <string name="solveReport">Resoldre denuncia</string>
     <string name="deleteUser">Eliminar usuari</string>
     <string name="VehicleSeats">Seients del vehicle</string>
+
+    <string name="GetDriversError">Hi ha hagut un error intentant obtenir la llista de conductors a verificar</string>
+    <string name="GetDriversGood">El llistat de conductors a verificar ha estat obtingut</string>
 </resources>
