@@ -10,7 +10,7 @@ import elektroGo.adminapp.ui.MainActivity
 
 class ReportListActivity : AppCompatActivity() {
 
-    private val reportListFragment = ViewReportListFragment()
+    private val reportListFragment = ReportListFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

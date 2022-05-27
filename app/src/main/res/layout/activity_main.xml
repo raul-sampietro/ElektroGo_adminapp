@@ -10,23 +10,24 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="start"
         android:background="#00008b"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/bottom_menu" />
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/fragContainer"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:navGraph="@navigation/bottom_nav"
+        tools:layout="@layout/report_list_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/bottom_nav"
-        tools:layout="@layout/view_report_list_fragment" />
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

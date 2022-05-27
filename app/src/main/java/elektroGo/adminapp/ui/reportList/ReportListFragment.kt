@@ -13,26 +13,29 @@ import android.widget.Toast
 import elektroGo.adminapp.R
 import elektroGo.adminapp.model.Reports
 
-class ViewReportListFragment : Fragment() {
+class ReportListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ViewReportListFragment()
+        fun newInstance() = ReportListFragment()
     }
 
-    private lateinit var viewModel: ViewReportListViewModel
+    private lateinit var viewModel: ReportListViewModel
 
     private lateinit var reportList: ArrayList<Reports>
 
     private lateinit var emptyList: TextView
+
+    private lateinit var listView: ListView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.view_report_list_fragment, container, false)
+        return inflater.inflate(R.layout.report_list_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val listView: ListView = view.findViewById(R.id.reportListView)
+        listView = view.findViewById(R.id.reportListView)
         emptyList = requireActivity().findViewById(R.id.emptyList)
         reportList = ArrayList<Reports>()
 
@@ -48,9 +51,29 @@ class ViewReportListFragment : Fragment() {
             Toast.makeText(context, getString(R.string.GetReportsGood),Toast.LENGTH_SHORT).show()
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[ViewReportListViewModel::class.java]
+        viewModel = ViewModelProvider(this)[ReportListViewModel::class.java]
+    }
+
+    override fun onResume() {
+        super.onResume()
+        emptyList = requireActivity().findViewById(R.id.emptyList)
+        reportList = ArrayList<Reports>()
+
+        val httpResponse = viewModel.getReports()
+        if (httpResponse.first != 200){
+            Toast.makeText(context, getString(R.string.GetReportsError),Toast.LENGTH_SHORT).show()
+        }
+        else {
+            reportList = httpResponse.second
+            if (reportList.size == 0) emptyList.text = resources.getString(R.string.emptyReportList)
+            else emptyList.text = ""
+            listView.adapter = ReportAdapter(context as Activity, reportList)
+            Toast.makeText(context, getString(R.string.GetReportsGood),Toast.LENGTH_SHORT).show()
+        }
+
     }
 
 }

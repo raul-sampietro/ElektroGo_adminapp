@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import elektroGo.adminapp.R
 import elektroGo.adminapp.model.Reports
 
-class ReportAdapter (private val context: Activity, private val reportList: ArrayList<Reports>): ArrayAdapter<Reports>(context, R.layout.view_report_list_fragment, reportList) {
+class ReportAdapter (private val context: Activity, private val reportList: ArrayList<Reports>): ArrayAdapter<Reports>(context, R.layout.report_list_fragment, reportList) {
 
-    private lateinit var viewModel: ViewReportListViewModel
+    private lateinit var viewModel: ReportListViewModel
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val inflater = LayoutInflater.from(context)

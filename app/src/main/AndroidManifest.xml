@@ -21,15 +21,19 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.vehicleConfirmation.DetailsVehicleActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="Detalls del vehicle"
+            android:theme="@style/Theme.ElektroGo_adminapp.NoActionBar"/>
         <activity
             android:name=".ui.reportList.DetailsReportActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="Detalls de la denuncia"
+            android:theme="@style/Theme.ElektroGo_adminapp.NoActionBar"/>
         <activity
-            android:name=".ui.reportList.ShowMoreReportActivity"
-            android:exported="false"
-            android:label="@string/title_activity_show_more_report"
-            android:theme="@style/Theme.ElektroGo_adminapp.NoActionBar" />
+            android:name=".ui.driversConfirmation.DriverDetailsActivity"
+            android:exported="true"
+            android:label="Detalls del conductor"
+            android:theme="@style/Theme.ElektroGo_adminapp.NoActionBar"/>
         <activity
             android:name=".ui.reportList.ReportListActivity"
             android:exported="false"

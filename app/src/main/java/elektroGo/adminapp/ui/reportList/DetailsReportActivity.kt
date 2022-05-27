@@ -1,6 +1,5 @@
 package elektroGo.adminapp.ui.reportList
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -8,7 +7,6 @@ import android.widget.TextView
 import android.widget.Toast
 import elektroGo.adminapp.R
 import elektroGo.adminapp.controller.AdminAppController
-import elektroGo.adminapp.ui.MainActivity
 import kotlinx.coroutines.runBlocking
 
 class DetailsReportActivity : AppCompatActivity() {
@@ -22,15 +20,20 @@ class DetailsReportActivity : AppCompatActivity() {
 
     private lateinit var deleteUser: Button
 
+    lateinit var toolbar2 : androidx.appcompat.widget.Toolbar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_report)
 
+        toolbar2  = findViewById(R.id.toolbar_main)
+
+        toolbar2.title = "Detalls de la denuncia"
         userWhoReports = findViewById(R.id.Username)
         reportedUser = findViewById(R.id.reportedUsername)
         reason = findViewById(R.id.brieflyReason)
-        solveButton = findViewById(R.id.solveButton)
-        deleteUser = findViewById(R.id.deleteUserButton)
+        solveButton = findViewById(R.id.acceptButton2)
+        deleteUser = findViewById(R.id.denyButton)
 
         //Assignem els texts corresponents
         userWhoReports.text = intent.getStringExtra("userWhoReports")
@@ -38,7 +41,6 @@ class DetailsReportActivity : AppCompatActivity() {
         reason.text = intent.getStringExtra("reason")
 
         solveButton.setOnClickListener{
-            //TODO: FER LA CRIDA AMB BACKEND, CONTROL D'ERRORS I FER UN TOAST
 
             var status = -1
             val uWhoReports = intent.getStringExtra("userWhoReports")
@@ -55,7 +57,7 @@ class DetailsReportActivity : AppCompatActivity() {
             else if (status == 200) Toast.makeText(this, "La denúncia s'ha eliminat.", Toast.LENGTH_LONG).show()
             else if (status != -2) Toast.makeText(this, "Hi ha hagut un error. ERROR: $status", Toast.LENGTH_LONG).show()
 
-            onBackPressed()
+            finish()
         }
 
         deleteUser.setOnClickListener{
@@ -75,16 +77,8 @@ class DetailsReportActivity : AppCompatActivity() {
             else if (status == 200) Toast.makeText(this, "L'usuari $userToDelete ha estat eliminat.", Toast.LENGTH_LONG).show()
             else if (status != -2) Toast.makeText(this, "Hi ha hagut un error. ERROR: $status", Toast.LENGTH_LONG).show()
 
-            onBackPressed()
+            finish()
         }
     }
-    override fun onBackPressed() {
-        if (onBackPressedDispatcher.hasEnabledCallbacks()) {
-            super.onBackPressed()
-        } else {
-            var intent = Intent(this, ReportListActivity::class.java)
-            intent.putExtra("origin", "reportList")
-            startActivity(intent)
-        }
-    }
+
 }
