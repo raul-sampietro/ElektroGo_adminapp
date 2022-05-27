@@ -1,5 +1,6 @@
 package elektroGo.adminapp.controller
 
+import elektroGo.adminapp.model.Driver
 import elektroGo.adminapp.model.Reports
 import elektroGo.adminapp.model.Vehicle
 import io.ktor.client.*
@@ -92,5 +93,20 @@ object AdminAppController {
     suspend fun rejectVehicle(numberPlate: String): Int {
         val httpResponse: HttpResponse = client.delete("${URL_VEHICLES}/${numberPlate}")
         return httpResponse.status.value
+    }
+
+    // #################################################
+    // #  DRIVERS                                      #
+    // #################################################
+
+    private val URL_DRIVERS = "${URL_BASE}/drivers"
+    suspend fun getDriversList(): Pair<Int, ArrayList<Driver>>{
+        val drivers: HttpResponse = client.get("${URL_DRIVERS}/nonVerified")
+        val status: Int = drivers.status.value
+
+        val driverList: ArrayList<Driver>
+        if (status != 200) driverList = ArrayList<Driver>()
+        else driverList = drivers.receive()
+        return Pair(status, driverList)
     }
 }

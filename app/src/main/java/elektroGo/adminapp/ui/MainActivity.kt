@@ -1,34 +1,15 @@
 package elektroGo.adminapp.ui
 
-import android.content.Intent
-import android.content.res.Configuration
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.NavigationUI.setupWithNavController
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import ch.qos.logback.classic.net.SimpleSSLSocketServer.main
-import ch.qos.logback.classic.net.SimpleSocketServer.main
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
-import com.google.android.material.navigation.NavigationView
 import elektroGo.adminapp.R
 import elektroGo.adminapp.databinding.ActivityMainBinding
-import elektroGo.adminapp.ui.driversConfirmation.DriversList
-import elektroGo.adminapp.ui.reportList.ReportListActivity
+import elektroGo.adminapp.ui.driversConfirmation.DriversListFragment
 import elektroGo.adminapp.ui.reportList.ReportListFragment
 import elektroGo.adminapp.ui.vehicleConfirmation.VehicleListFragment
 
@@ -52,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             R.id.driversList -> {
                 toolbar.title = "Llistat de conductors"
                 //linia que havia escrit la Marina
-                val llistatConductors = DriversList()
+                val llistatConductors = DriversListFragment()
                 openFragment(llistatConductors)
                 return@OnItemSelectedListener true
             }

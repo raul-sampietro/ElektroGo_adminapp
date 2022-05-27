@@ -27,7 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_margin="20dp"
-            android:scaleType="center"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             tools:srcCompat="@drawable/ic_baseline_image_24" />
 
         <TextView
