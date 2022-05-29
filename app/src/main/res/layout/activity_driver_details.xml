@@ -22,7 +22,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
@@ -38,9 +38,9 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/fronatlImage"
+            android:id="@+id/frontalImage"
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:scaleType="fitCenter"
@@ -60,7 +60,7 @@
         <ImageView
             android:id="@+id/backImage"
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:scaleType="fitCenter"
