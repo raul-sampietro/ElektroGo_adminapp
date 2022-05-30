@@ -44,7 +44,6 @@ class DriversListFragment : Fragment() {
             if (driverList.size == 0) emptyList.text = resources.getString(R.string.emptyDrivers)
             else emptyList.text = ""
             listView.adapter = DriverAdapter(context as Activity, driverList)
-            Toast.makeText(context, getString(R.string.GetDriversGood), Toast.LENGTH_SHORT).show()
         }
     }
 

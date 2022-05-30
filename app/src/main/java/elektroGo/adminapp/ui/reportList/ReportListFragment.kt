@@ -48,7 +48,6 @@ class ReportListFragment : Fragment() {
             if (reportList.size == 0) emptyList.text = resources.getString(R.string.emptyReportList)
             else emptyList.text = ""
             listView.adapter = ReportAdapter(context as Activity, reportList)
-            Toast.makeText(context, getString(R.string.GetReportsGood),Toast.LENGTH_SHORT).show()
         }
     }
 
