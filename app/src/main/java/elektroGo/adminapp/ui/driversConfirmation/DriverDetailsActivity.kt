@@ -39,7 +39,6 @@ class DriverDetailsActivity : AppCompatActivity() {
         frontImage = findViewById(R.id.frontalImage)
         reverseImage = findViewById(R.id.backImage)
         username.text = intent.getStringExtra("username")
-        Toast.makeText(this, "S'estan carregant les imatges", Toast.LENGTH_LONG).show()
 
         Picasso.get().load("http://10.4.41.58:8080/drivers/${username.text}/imageFront").into(frontImage)
         Picasso.get().load("http://10.4.41.58:8080/drivers/${username.text}/imageBack").into(reverseImage)

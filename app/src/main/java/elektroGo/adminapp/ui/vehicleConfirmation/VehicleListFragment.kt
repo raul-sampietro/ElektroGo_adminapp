@@ -55,7 +55,6 @@ class VehicleListFragment : Fragment() {
             }
             else emptyList.text = ""
             listView.adapter = VehicleAdapter(context as Activity, vehicleList)
-            Toast.makeText(context, getString(R.string.GetVehiclesGood), Toast.LENGTH_SHORT).show()
         }
     }
 
